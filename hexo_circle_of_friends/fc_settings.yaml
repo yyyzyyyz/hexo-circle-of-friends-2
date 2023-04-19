@@ -30,54 +30,62 @@
 #       avatar：必填，头像地址
 #       suffix：选填，自定义订阅后缀，主要针对不规范的网站订阅后缀，见示例2
 SETTINGS_FRIENDS_LINKS: {
-    enable: true,
-    json_api: "",
-    list: [
-        # 示例1：
-        ["阮一峰的网络日志", "https://www.ruanyifeng.com/blog/", "https://www.ruanyifeng.com/favicon.ico"],
-        ["又见苍岚", "https://www.zywvvd.com/", "https://www.zywvvd.com/image/avatar.png"],
-        ["Sarakale", "https://www.sarakale.top/blog/", "https://npm.elemecdn.com/sarakale-assets@v1/favicon.ico"],
-        ["yyyz", "https://www.yyyzyyyz.cn/", "https://www.yyyzyyyz.cn/butterflyimg/img/avatar.png"],
-        ["fdChen的掉发收集箱", "https://blog.fdchen.host/", "https://raw.githubusercontent.com/ccsemicircle/cdn/v2.0.4/favicon.png"],
-        ["静觅", "https://cuiqingcai.com/", "https://cuiqingcai.com/images/avatar.png"],
-        ["掉发收集站—秃秃日记", "https://wangwangyz.site/", "https://wangwangyz.site/my/static/cropped-%e7%ab%99%e7%82%b9logo.png"],
-        ["程序猿DD", "https://blog.didispace.com/", "https://blog.didispace.com/images/favicon.ico"],
-        ["Fluid", "https://hexo.fluid-dev.com/", "https://hexo.fluid-dev.com/img/fluid.png"]
-        # 示例2：使用suffix的配置如下
-        # 程序目前自动获取 "atom.xml", "feed/atom", "rss.xml", "rss2.xml", "feed", "index.xml" 这些后缀
-        # 如果目标地址的后缀不在其中，就可以在这里添加
-        # 比如 https://elizen.me/hello.xml ，填写：
-        #["elizen", "https://elizen.me/", "https://akilar.top/images/headimage.png", "hello.xml"]
+  enable: true,
+  json_api: {
+    "friends": [
+      [
+          "阮一峰的网络日志",   # 友链名称
+          "https://www.ruanyifeng.com/blog/",  # 友链地址
+          "https://www.ruanyifeng.com/favicon.ico"  # 友链头像
+      ],
+      [ "又见苍岚", "https://www.zywvvd.com/", "https://www.zywvvd.com/image/avatar.png" ],
+      [ "Sarakale", "https://www.sarakale.top/blog/", "https://npm.elemecdn.com/sarakale-assets@v1/favicon.ico" ],
+      [ "yyyz", "https://www.yyyzyyyz.cn/", "https://www.yyyzyyyz.cn/butterflyimg/img/avatar.png" ],
+      [ "fdChen的掉发收集箱", "https://blog.fdchen.host/", "https://raw.githubusercontent.com/ccsemicircle/cdn/v2.0.4/favicon.png" ],
+      [ "静觅", "https://cuiqingcai.com/", "https://cuiqingcai.com/images/avatar.png" ],
+      [ "掉发收集站—秃秃日记", "https://wangwangyz.site/", "https://wangwangyz.site/my/static/cropped-%e7%ab%99%e7%82%b9logo.png" ],
+      [ "程序猿DD", "https://blog.didispace.com/", "https://blog.didispace.com/images/favicon.ico" ],
+      [ "Fluid", "https://hexo.fluid-dev.com/", "https://hexo.fluid-dev.com/img/fluid.png" ]
     ]
+  },
+  list: [
+    # 示例1：
+    #["阮一峰的网络日志", "https://www.ruanyifeng.com/blog/", "https://www.ruanyifeng.com/favicon.ico"],
+    # 示例2：使用suffix的配置如下
+    # 程序目前自动获取 "atom.xml", "feed/atom", "rss.xml", "rss2.xml", "feed", "index.xml" 这些后缀
+    # 如果目标地址的后缀不在其中，就可以在这里添加
+    # 比如 https://elizen.me/hello.xml ，填写：
+    #["elizen", "https://elizen.me/", "https://akilar.top/images/headimage.png", "hello.xml"]
+  ]
 }
 
 # get links from gitee
 # 从gitee issue中获取友链
 GITEE_FRIENDS_LINKS: {
-    enable: false, # true 开启gitee issue兼容
-    type: "normal",  # volantis/stellar用户请在这里填写volantis
-    owner:  "ccknbc",  # 填写你的gitee用户名
-    repo:  "blogroll",  # 填写你的gitee仓库名
-    state:  "open",  # 填写抓取的issue状态(open/closed)
+  enable: false, # true 开启gitee issue兼容
+  type: "normal",  # volantis/stellar用户请在这里填写volantis
+  owner:  "ccknbc",  # 填写你的gitee用户名
+  repo:  "blogroll",  # 填写你的gitee仓库名
+  state:  "open",  # 填写抓取的issue状态(open/closed)
 }
 
 # get links from github
 # 从github issue中获取友链
 GITHUB_FRIENDS_LINKS: {
-    enable: false, # true 开启github issue兼容
-    type: "normal",  # volantis/stellar用户请在这里填写volantis
-    owner: "ccknbc",  # 填写你的github用户名
-    repo: "ccknbc-actions",  # 填写你的github仓库名
-    state: "open",  # 填写抓取的issue状态(open/closed)
-    label: "active",  # 填写抓取的issue标签
+  enable: false, # true 开启github issue兼容
+  type: "normal",  # volantis/stellar用户请在这里填写volantis
+  owner: "ccknbc",  # 填写你的github用户名
+  repo: "ccknbc-actions",  # 填写你的github仓库名
+  state: "open",  # 填写抓取的issue状态(open/closed)
+  label: "active",  # 填写抓取的issue标签
 }
 
 # block site list
 # 添加屏蔽站点，支持正则表达式
 BLOCK_SITE: [
-#    https://example.com/, # 屏蔽 https://example.com/
-#    .*\.com,  # 含有.com的全部屏蔽
-#    ^http://,  # http开头的全部屏蔽
+  #    https://example.com/, # 屏蔽 https://example.com/
+  #    .*\.com,  # 含有.com的全部屏蔽
+  #    ^http://,  # http开头的全部屏蔽
 ]
 
 # 每个友链最多获取几篇文章，此值越大，则抓取的文章上限越多，相应地运行速度也会降低，反之亦然
