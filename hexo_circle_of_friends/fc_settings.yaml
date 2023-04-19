@@ -22,7 +22,7 @@ LINK: [
 ]
 
 # 配置项友链
-enable：true# 是否启用配置项友链 true/false（针对还未适配主题或者有定制需求的用户）
+# enable：true 是否启用配置项友链 true/false（针对还未适配主题或者有定制需求的用户）
 # json_api：通过json格式配置友链，详见：https://fcircle-doc.yyyzyyyz.cn/#/developmentdoc?id=配置项json友链
 # list字段填写格式：["name", "link", "avatar","suffix"]，其中：
 #       name：必填，友链的名字
@@ -42,7 +42,7 @@ SETTINGS_FRIENDS_LINKS: {
         ["静觅", "https://cuiqingcai.com/", "https://cuiqingcai.com/images/avatar.png"],
         ["掉发收集站—秃秃日记", "https://wangwangyz.site/", "https://wangwangyz.site/my/static/cropped-%e7%ab%99%e7%82%b9logo.png"],
         ["程序猿DD", "https://blog.didispace.com/", "https://blog.didispace.com/images/favicon.ico"],
-        ["Fluid", "https://hexo.fluid-dev.com/", "https://hexo.fluid-dev.com/img/fluid.png"],
+        ["Fluid", "https://hexo.fluid-dev.com/", "https://hexo.fluid-dev.com/img/fluid.png"]
         # 示例2：使用suffix的配置如下
         # 程序目前自动获取 "atom.xml", "feed/atom", "rss.xml", "rss2.xml", "feed", "index.xml" 这些后缀
         # 如果目标地址的后缀不在其中，就可以在这里添加
