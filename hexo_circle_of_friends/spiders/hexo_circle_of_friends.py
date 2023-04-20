@@ -57,6 +57,7 @@ class FriendpageLinkSpider(scrapy.Spider):
             for li in self.settings.get("SETTINGS_FRIENDS_LINKS").get("list"):
                 print(li)
                 self.friend_poor.put(li)
+        print(self.friend_poor.empty())
         # 向gitee发送请求获取友链
         if self.settings["GITEE_FRIENDS_LINKS"]["enable"]:
             for number in range(1, 100):
@@ -80,6 +81,7 @@ class FriendpageLinkSpider(scrapy.Spider):
         self.start_urls.extend(friendpage_link)
         print(self.start_urls)
         print(self.friend_poor.empty())
+        print(self.settings.get("SETTINGS_FRIENDS_LINKS").get("list")[0][1])
         if self.start_urls:
             for i, url in enumerate(self.start_urls):
                 logger.info(f"起始url: {url}")
