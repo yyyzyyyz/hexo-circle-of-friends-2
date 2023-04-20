@@ -107,7 +107,7 @@ class FriendpageLinkSpider(scrapy.Spider):
 
     def friend_poor_parse(self, response):
         # 从友链页解析出所有的友链信息
-        # print("friend_poor_parse---------->" + response.url)
+        print("friend_poor_parse---------->" + response.url)
 
         # gitee解析
         if "gitee" in response.meta.keys():
@@ -164,7 +164,7 @@ class FriendpageLinkSpider(scrapy.Spider):
         # Yun主题async_link临时解决
         if "async_link" in response.meta.keys():
             self.friend_url_parser.Yun_async_link_handler(response, self.friend_poor)
-
+        print("k")
         # 从友链队列逐个取出友链信息，对其主页发送请求
         while not self.friend_poor.empty():
             friend = self.friend_poor.get()
@@ -186,7 +186,7 @@ class FriendpageLinkSpider(scrapy.Spider):
         # friend = ['小冰博客', 'https://copur.xyz/', 'https://zfe.space/images/headimage.png']
         # [[1,1,1],[2,3,2]]
         # yield CRequest(friend[1], callback=self.theme_next_parse, meta={"friend": friend})
-
+        print("kk")
         # 将获取到的朋友列表传递到管道
         while not self.friend_list.empty():
             friend = self.friend_list.get()
