@@ -76,6 +76,7 @@ class FriendpageLinkSpider(scrapy.Spider):
         # 初始化起始请求链接
         friendpage_link, friendpage_theme = self.init_start_urls()
         self.start_urls.extend(friendpage_link)
+        print(self.start_urls)
         if self.start_urls:
             for i, url in enumerate(self.start_urls):
                 logger.info(f"起始url: {url}")
