@@ -53,7 +53,9 @@ class FriendpageLinkSpider(scrapy.Spider):
     def start_requests(self):
         # 从配置文件导入友链列表
         if self.settings.get("SETTINGS_FRIENDS_LINKS").get("enable"):
+            print(11111111)
             for li in self.settings.get("SETTINGS_FRIENDS_LINKS").get("list"):
+                print(li)
                 self.friend_poor.put(li)
         # 向gitee发送请求获取友链
         if self.settings["GITEE_FRIENDS_LINKS"]["enable"]:
@@ -77,6 +79,7 @@ class FriendpageLinkSpider(scrapy.Spider):
         friendpage_link, friendpage_theme = self.init_start_urls()
         self.start_urls.extend(friendpage_link)
         print(self.start_urls)
+        print(self.friend_poor.empty())
         if self.start_urls:
             for i, url in enumerate(self.start_urls):
                 logger.info(f"起始url: {url}")
