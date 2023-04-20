@@ -34,8 +34,8 @@ SETTINGS_FRIENDS_LINKS: {
   json_api: "",
   list: [
     # 示例1：
-    ["阮一峰的网络日志", "https://www.ruanyifeng.com/blog/", "https://www.ruanyifeng.com/favicon.ico", "atom.xml"],
-    [ "又见苍岚", "https://www.zywvvd.com/", "https://www.zywvvd.com/image/avatar.png", "atom.xml"],
+    ["阮一峰的网络日志", "https://www.ruanyifeng.com/blog/", "https://www.ruanyifeng.com/favicon.ico" ],
+    [ "又见苍岚", "https://www.zywvvd.com/", "https://www.zywvvd.com/image/avatar.png" ],
     [ "Sarakale", "https://www.sarakale.top/blog/", "https://npm.elemecdn.com/sarakale-assets@v1/favicon.ico" ],
     [ "yyyz", "https://www.yyyzyyyz.cn/", "https://www.yyyzyyyz.cn/butterflyimg/img/avatar.png" ],
     [ "fdChen的掉发收集箱", "https://blog.fdchen.host/", "https://raw.githubusercontent.com/ccsemicircle/cdn/v2.0.4/favicon.png" ],
